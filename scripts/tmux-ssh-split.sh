@@ -193,6 +193,8 @@ inject_remote_cwd() {
     return 0
   fi
 
+  ssh_cwd="${ssh_cwd%>}"
+
   local remote_command=(
     "cd \"${ssh_cwd}\" 2>/dev/null"
   )
